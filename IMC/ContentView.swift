@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                
+            }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+                .background(.backgroundApp)
+                .toolbar {
+                    ToolbarItem(placement: .principal) {
+                        Text("IMC Calculator").bold().foregroundColor(.onBackgroundText)
+                    }
+                }
         }
-        .padding()
     }
 }
 
