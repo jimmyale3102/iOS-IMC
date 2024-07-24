@@ -13,7 +13,7 @@ struct IMCResult: View {
     
     var body: some View {
         VStack {
-            Text("Tu resultado").font(.title).bold().foregroundColor(.white)
+            Text("Your results").font(.title).bold().foregroundColor(.white)
             let result = calculateIMC(userWeight: userWeight, userHeigh: userHeigh)
             ResultComponent(result: result)
         }
@@ -56,24 +56,24 @@ func getIMCData(result: Double) -> (String, String, Color) {
     
     switch result {
     case 0.00...19.99:
-        title = "Peso bajo"
-        description = "Estás por debajo del peso recomendado según el IMC."
+        title = "Underweight"
+        description = "You are below the recommended weight according to BMI."
         color = Color.yellow
     case 20.00...24.99:
-        title = "Peso normal"
-        description = "Estás en el peso recomendado según el IMC."
+        title = "Normal weight"
+        description = "You are at the recommended weight according to BMI."
         color = Color.green
     case 25.00...29.99:
-        title = "Sobrepeso"
-        description = "Estás por encima del peso recomendado según el IMC."
+        title = "Overweight"
+        description = "You are above the recommended weight according to BMI."
         color = Color.orange
     case 30.00...100:
-        title = "Obesidad"
-        description = "Estás muy por encima del peso recomendado según el IMC."
+        title = "Obesity"
+        description = "You are significantly above the recommended weight according to BMI."
         color = Color.red
     default:
         title = "Error"
-        description = "Ha ocurrido un error."
+        description = "An error has occurred."
         color = Color.gray
     }
     return (title, description, color)

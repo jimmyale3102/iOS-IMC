@@ -22,21 +22,21 @@ struct ContentView: View {
                 HStack {
                     GenderButton(
                         iconName: "heart.fill",
-                        text: "Mujer",
+                        text: "Woman",
                         gender: WOMAN,
                         genderSelected: $genderSelected
                     )
                     GenderButton(
                         iconName: "star.fill",
-                        text: "Hombre",
+                        text: "Man",
                         gender: MAN,
                         genderSelected: $genderSelected
                     )
                 }.frame(height: 120)
                 HeighComponent(heigh: $heigh)
                 HStack {
-                    CounterComponent(title: "Edad", description: "años", count: $ageCount)
-                    CounterComponent(title: "Peso", description: "Kg",  count: $weightCount)
+                    CounterComponent(title: "Age", description: "years", count: $ageCount)
+                    CounterComponent(title: "Weight", description: "Kg",  count: $weightCount)
                 }
                 CalculateButton(userWeight: Double(weightCount), userHeigh: heigh)
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
@@ -44,7 +44,7 @@ struct ContentView: View {
                 .background(.backgroundApp)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Text("IMC Calculator").font(.title2).bold().foregroundColor(.onBackgroundText)
+                        Text("BMI Calculator").font(.title2).bold().foregroundColor(.onBackgroundText)
                     }
                 }
         }
@@ -87,7 +87,7 @@ struct HeighComponent: View {
     @Binding var heigh: Double
     var body: some View {
         VStack {
-            TitleText(text: "Altura")
+            TitleText(text: "Heigh")
             DescriptionText(text: "\(Int(heigh)) cm")
             Slider(value: $heigh, in: 150...210, step: 1)
                 .accentColor(.backgroundApp)
@@ -158,7 +158,7 @@ struct CalculateButton: View {
         NavigationLink(destination: {
             IMCResult(userWeight: userWeight, userHeigh: userHeigh)
         }) {
-            Text("Calcular")
+            Text("Calculate")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 .bold()
                 .foregroundColor(.onBackgroundText)
