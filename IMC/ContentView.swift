@@ -38,13 +38,13 @@ struct ContentView: View {
                     CounterComponent(title: "Edad", description: "años", count: $ageCount)
                     CounterComponent(title: "Peso", description: "Kg",  count: $weightCount)
                 }
-                CalculateButton()
+                CalculateButton(userWeight: Double(weightCount), userHeigh: heigh)
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
                 .padding()
                 .background(.backgroundApp)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Text("IMC Calculator").bold().foregroundColor(.onBackgroundText)
+                        Text("IMC Calculator").font(.title2).bold().foregroundColor(.onBackgroundText)
                     }
                 }
         }
@@ -152,8 +152,12 @@ struct RoundedButton: View {
 }
 
 struct CalculateButton: View {
+    let userWeight: Double
+    let userHeigh: Double
     var body: some View {
-        NavigationLink(destination: { }) {
+        NavigationLink(destination: {
+            IMCResult(userWeight: userWeight, userHeigh: userHeigh)
+        }) {
             Text("Calcular")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 .bold()
