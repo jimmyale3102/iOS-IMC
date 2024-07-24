@@ -13,6 +13,8 @@ struct ContentView: View {
     let WOMAN: Int = 1
     @State var genderSelected: Int = 0
     @State var heigh: Double = 180
+    @State var ageCount: Int = 20
+    @State var weightCount: Int = 60
     
     var body: some View {
         NavigationView {
@@ -32,6 +34,10 @@ struct ContentView: View {
                     )
                 }.frame(height: 120)
                 HeighComponent(heigh: $heigh)
+                HStack {
+                    CounterComponent(title: "Edad", description: "años", count: $ageCount)
+                    CounterComponent(title: "Peso", description: "Kg",  count: $weightCount)
+                }
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
                 .padding()
                 .background(.backgroundApp)
@@ -99,6 +105,48 @@ struct DescriptionText: View {
             .font(.title3)
             .bold()
             .foregroundColor(.white)
+    }
+}
+
+struct CounterComponent: View {
+    let title: String
+    let description: String
+    @Binding var count: Int
+    
+    var body: some View {
+        VStack {
+            TitleText(text: title)
+            DescriptionText(text: "\(String(count)) \(description)")
+            HStack {
+                RoundedButton(text: "-") {
+                    if (count > 0) {
+                        count -= 1
+                    }
+                }
+                RoundedButton(text: "+") { count += 1 }
+            }
+        }
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+        .background(.backgroundComponent)
+        .cornerRadius(12)
+    }
+}
+
+struct RoundedButton: View {
+    let text: String
+    var onClick: () -> Void
+    
+    var body: some View {
+        Button(action: onClick) {
+            Text(text)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .bold()
+                .foregroundColor(.white)
+        }
+        .frame(width: 52, height: 52)
+        .background(.onSelected)
+        .cornerRadius(26)
     }
 }
 
