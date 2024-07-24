@@ -38,6 +38,7 @@ struct ContentView: View {
                     CounterComponent(title: "Edad", description: "años", count: $ageCount)
                     CounterComponent(title: "Peso", description: "Kg",  count: $weightCount)
                 }
+                CalculateButton()
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
                 .padding()
                 .background(.backgroundApp)
@@ -147,6 +148,20 @@ struct RoundedButton: View {
         .frame(width: 52, height: 52)
         .background(.onSelected)
         .cornerRadius(26)
+    }
+}
+
+struct CalculateButton: View {
+    var body: some View {
+        NavigationLink(destination: { }) {
+            Text("Calcular")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .bold()
+                .foregroundColor(.onBackgroundText)
+                .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 100)
+        }
+        .background(.backgroundComponent)
+        .cornerRadius(12)
     }
 }
 
