@@ -11,7 +11,8 @@ struct ContentView: View {
     
     let MAN: Int = 0
     let WOMAN: Int = 1
-    @State var genderSelected: Int = 0 
+    @State var genderSelected: Int = 0
+    @State var heigh: Double = 180
     
     var body: some View {
         NavigationView {
@@ -30,6 +31,7 @@ struct ContentView: View {
                         genderSelected: $genderSelected
                     )
                 }.frame(height: 120)
+                HeighComponent(heigh: $heigh)
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
                 .padding()
                 .background(.backgroundApp)
@@ -74,6 +76,22 @@ struct GenderButton: View {
     }
 }
 
+struct HeighComponent: View {
+    @Binding var heigh: Double
+    var body: some View {
+        VStack {
+            TitleText(text: "Altura")
+            DescriptionText(text: "\(Int(heigh)) cm")
+            Slider(value: $heigh, in: 150...210, step: 1)
+                .accentColor(.backgroundApp)
+        }
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
+        .padding()
+        .background(.backgroundComponent)
+        .cornerRadius(12)
+    }
+}
+
 struct DescriptionText: View {
     let text: String
     var body: some View {
@@ -81,6 +99,15 @@ struct DescriptionText: View {
             .font(.title3)
             .bold()
             .foregroundColor(.white)
+    }
+}
+
+struct TitleText: View {
+    let text: String
+    var body: some View {
+        Text(text)
+            .font(.title3)
+            .foregroundColor(.onBackgroundText)
     }
 }
 
