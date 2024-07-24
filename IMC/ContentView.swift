@@ -84,9 +84,9 @@ struct HeighComponent: View {
             DescriptionText(text: "\(Int(heigh)) cm")
             Slider(value: $heigh, in: 150...210, step: 1)
                 .accentColor(.backgroundApp)
+                .padding(.horizontal, 16)
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
-        .padding()
         .background(.backgroundComponent)
         .cornerRadius(12)
     }
