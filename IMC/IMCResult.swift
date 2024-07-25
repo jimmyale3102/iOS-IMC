@@ -9,12 +9,12 @@ import SwiftUI
 
 struct IMCResult: View {
     let userWeight: Double
-    let userHeigh: Double
+    let userHeight: Double
     
     var body: some View {
         VStack {
             Text("Your results").font(.title).bold().foregroundColor(.white)
-            let result = calculateIMC(userWeight: userWeight, userHeigh: userHeigh)
+            let result = calculateIMC(userWeight: userWeight, userHeigh: userHeight)
             ResultComponent(result: result)
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
@@ -85,5 +85,5 @@ func calculateIMC(userWeight: Double, userHeigh: Double) -> Double {
 }
 
 #Preview {
-    IMCResult(userWeight: 60.0, userHeigh: 180.0)
+    IMCResult(userWeight: 60.0, userHeight: 180.0)
 }

@@ -12,7 +12,7 @@ struct ContentView: View {
     let MAN: Int = 0
     let WOMAN: Int = 1
     @State var genderSelected: Int = 0
-    @State var heigh: Double = 180
+    @State var height: Double = 180
     @State var ageCount: Int = 20
     @State var weightCount: Int = 60
     
@@ -33,12 +33,12 @@ struct ContentView: View {
                         genderSelected: $genderSelected
                     )
                 }.frame(height: 120)
-                HeighComponent(heigh: $heigh)
+                HeightComponent(height: $height)
                 HStack {
                     CounterComponent(title: "Age", description: "years", count: $ageCount)
                     CounterComponent(title: "Weight", description: "Kg",  count: $weightCount)
                 }
-                CalculateButton(userWeight: Double(weightCount), userHeigh: heigh)
+                CalculateButton(userWeight: Double(weightCount), userHeight: height)
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
                 .padding()
                 .background(.backgroundApp)
@@ -83,13 +83,13 @@ struct GenderButton: View {
     }
 }
 
-struct HeighComponent: View {
-    @Binding var heigh: Double
+struct HeightComponent: View {
+    @Binding var height: Double
     var body: some View {
         VStack {
-            TitleText(text: "Heigh")
-            DescriptionText(text: "\(Int(heigh)) cm")
-            Slider(value: $heigh, in: 150...210, step: 1)
+            TitleText(text: "Height")
+            DescriptionText(text: "\(Int(height)) cm")
+            Slider(value: $height, in: 150...210, step: 1)
                 .accentColor(.backgroundApp)
                 .padding(.horizontal, 16)
         }
@@ -153,10 +153,10 @@ struct RoundedButton: View {
 
 struct CalculateButton: View {
     let userWeight: Double
-    let userHeigh: Double
+    let userHeight: Double
     var body: some View {
         NavigationLink(destination: {
-            IMCResult(userWeight: userWeight, userHeigh: userHeigh)
+            IMCResult(userWeight: userWeight, userHeight: userHeight)
         }) {
             Text("Calculate")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
