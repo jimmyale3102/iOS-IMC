@@ -47,6 +47,8 @@
 		BF8376EE2C4DD63A00219370 /* IMCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCUITests.swift; sourceTree = "<group>"; };
 		BF8376F02C4DD63A00219370 /* IMCUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF8376FF2C51295600219370 /* IMCResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCResult.swift; sourceTree = "<group>"; };
+		BF8377062C51D0CA00219370 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
+		BF8377072C51D0CA00219370 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		BF8376C62C4DD63600219370 = {
 			isa = PBXGroup;
 			children = (
+				BF8377012C51D0A300219370 /* assets */,
 				BF8376D12C4DD63600219370 /* IMC */,
 				BF8376E32C4DD63A00219370 /* IMCTests */,
 				BF8376ED2C4DD63A00219370 /* IMCUITests */,
@@ -130,6 +133,15 @@
 				BF8376F02C4DD63A00219370 /* IMCUITestsLaunchTests.swift */,
 			);
 			path = IMCUITests;
+			sourceTree = "<group>";
+		};
+		BF8377012C51D0A300219370 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				BF8377072C51D0CA00219370 /* 1.jpeg */,
+				BF8377062C51D0CA00219370 /* 2.jpeg */,
+			);
+			path = assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

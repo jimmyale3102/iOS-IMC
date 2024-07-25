@@ -12,7 +12,7 @@ struct ContentView: View {
     let MAN: Int = 0
     let WOMAN: Int = 1
     @State var genderSelected: Int = 0
-    @State var heigh: Double = 180
+    @State var height: Double = 180
     @State var ageCount: Int = 20
     @State var weightCount: Int = 60
     
@@ -22,29 +22,29 @@ struct ContentView: View {
                 HStack {
                     GenderButton(
                         iconName: "heart.fill",
-                        text: "Mujer",
+                        text: "Woman",
                         gender: WOMAN,
                         genderSelected: $genderSelected
                     )
                     GenderButton(
                         iconName: "star.fill",
-                        text: "Hombre",
+                        text: "Man",
                         gender: MAN,
                         genderSelected: $genderSelected
                     )
                 }.frame(height: 120)
-                HeighComponent(heigh: $heigh)
+                HeightComponent(height: $height)
                 HStack {
-                    CounterComponent(title: "Edad", description: "años", count: $ageCount)
-                    CounterComponent(title: "Peso", description: "Kg",  count: $weightCount)
+                    CounterComponent(title: "Age", description: "years", count: $ageCount)
+                    CounterComponent(title: "Weight", description: "Kg",  count: $weightCount)
                 }
-                CalculateButton(userWeight: Double(weightCount), userHeigh: heigh)
+                CalculateButton(userWeight: Double(weightCount), userHeight: height)
             }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
                 .padding()
                 .background(.backgroundApp)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Text("IMC Calculator").font(.title2).bold().foregroundColor(.onBackgroundText)
+                        Text("BMI Calculator").font(.title2).bold().foregroundColor(.onBackgroundText)
                     }
                 }
         }
@@ -83,13 +83,13 @@ struct GenderButton: View {
     }
 }
 
-struct HeighComponent: View {
-    @Binding var heigh: Double
+struct HeightComponent: View {
+    @Binding var height: Double
     var body: some View {
         VStack {
-            TitleText(text: "Altura")
-            DescriptionText(text: "\(Int(heigh)) cm")
-            Slider(value: $heigh, in: 150...210, step: 1)
+            TitleText(text: "Height")
+            DescriptionText(text: "\(Int(height)) cm")
+            Slider(value: $height, in: 150...210, step: 1)
                 .accentColor(.backgroundApp)
                 .padding(.horizontal, 16)
         }
@@ -153,12 +153,12 @@ struct RoundedButton: View {
 
 struct CalculateButton: View {
     let userWeight: Double
-    let userHeigh: Double
+    let userHeight: Double
     var body: some View {
         NavigationLink(destination: {
-            IMCResult(userWeight: userWeight, userHeigh: userHeigh)
+            IMCResult(userWeight: userWeight, userHeight: userHeight)
         }) {
-            Text("Calcular")
+            Text("Calculate")
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 .bold()
                 .foregroundColor(.onBackgroundText)
