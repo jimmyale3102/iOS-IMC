@@ -15,6 +15,7 @@
 		BF8376EF2C4DD63A00219370 /* IMCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8376EE2C4DD63A00219370 /* IMCUITests.swift */; };
 		BF8376F12C4DD63A00219370 /* IMCUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8376F02C4DD63A00219370 /* IMCUITestsLaunchTests.swift */; };
 		BF8377002C51295600219370 /* IMCResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8376FF2C51295600219370 /* IMCResult.swift */; };
+		BF83770B2C51D1EB00219370 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BF83770A2C51D1EB00219370 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		BF8376FF2C51295600219370 /* IMCResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMCResult.swift; sourceTree = "<group>"; };
 		BF8377062C51D0CA00219370 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
 		BF8377072C51D0CA00219370 /* 1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpeg; sourceTree = "<group>"; };
+		BF83770A2C51D1EB00219370 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		BF8376C62C4DD63600219370 = {
 			isa = PBXGroup;
 			children = (
+				BF83770A2C51D1EB00219370 /* README.md */,
 				BF8377012C51D0A300219370 /* assets */,
 				BF8376D12C4DD63600219370 /* IMC */,
 				BF8376E32C4DD63A00219370 /* IMCTests */,
@@ -248,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF83770B2C51D1EB00219370 /* README.md in Resources */,
 				BF8376DB2C4DD63900219370 /* Preview Assets.xcassets in Resources */,
 				BF8376D72C4DD63900219370 /* Assets.xcassets in Resources */,
 			);
